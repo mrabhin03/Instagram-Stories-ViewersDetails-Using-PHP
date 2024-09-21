@@ -1,4 +1,5 @@
 <?php
+//Users details
 include('Connections.php');
 include('session.php');
 

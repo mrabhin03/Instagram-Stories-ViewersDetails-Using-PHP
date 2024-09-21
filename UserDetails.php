@@ -1,4 +1,5 @@
 <?php
+//Stories a user seen and not seen
 include('Connections.php');
 include('session.php');
 $UserID=$_GET['details'];

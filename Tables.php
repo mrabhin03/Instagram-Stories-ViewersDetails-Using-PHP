@@ -1,5 +1,5 @@
 <?php
-
+//User data Table
 include('Connections.php');
 include('session.php');
 $storyID=$_SESSION['StoryID'];

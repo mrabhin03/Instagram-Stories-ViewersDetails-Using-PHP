@@ -1,4 +1,5 @@
 <?php
+//Updating the order of user to be displaied
 include('Connections.php');
 $UserId=$_GET['UserID'];
 $Start=$_GET['Start'];

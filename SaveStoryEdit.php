@@ -1,4 +1,5 @@
 <?php
+//Saving the changes made in Stories details
     include('Connections.php');
     include('session.php');
     $Mode=$_GET['Mode'];

@@ -1,3 +1,4 @@
+//The Javascript code for data from instagram
 const elements = document.querySelectorAll(".x1dm5mii.x16mil14.xiojian.x1yutycm.x1lliihq.x193iq5w.xh8yej3");
 elements[0].parentElement.parentElement.classList.add("MainScroll");
 visits = [];

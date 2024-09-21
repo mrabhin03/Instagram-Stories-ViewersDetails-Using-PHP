@@ -1,4 +1,5 @@
 <?php
+//Details of user who seen and not seen your story
 include('Connections.php');
 include('session.php');
 $storyID=$_SESSION['StoryID'];

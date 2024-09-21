@@ -1,4 +1,5 @@
 <?php
+//View and edit created stories 
 include('Connections.php');
 include('session.php');
 

@@ -1,4 +1,5 @@
 <?php
+//Updating the view list of a story
 include('Connections.php');
 include('session.php');
 ?>

@@ -1,3 +1,4 @@
+<!-- Create New Story details -->
 <?php
 include('Connections.php');
 include('session.php');
@@ -21,8 +22,6 @@ include('session.php');
         <label for="data">Story View Data</label>
         <textarea rows="10" name="data" id="data" placeholder="Data like: ['Userame1(Name)','Userame2(Name)']" required></textarea>
         <input type="submit" value="Submit" name="Story">
-        <!-- <h6>or</h6>
-        <a href="viewselected.php">View Created</a> -->
     </form>
 
     <?php
