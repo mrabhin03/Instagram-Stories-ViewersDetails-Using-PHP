@@ -81,13 +81,25 @@ include('session.php');
         button>b{
             font-weight:100;
         }
+        #header-details{
+          width:100%; 
+          display:flex; 
+          align-items:center; 
+          justify-content:space-between;
+        }
+        #header-details a{
+          color:white;
+        }
     </style>
 </head>
 <body>
     
     <h1>Insta Code</h1>
     <form  method="post">
-        <div style="width:100%;"><button type="button" onclick="copyText()"><ion-icon id="copies" name="copy-outline"></ion-icon> <b id="Copied">Copy</b> </button></div>
+        <div id="header-details">
+          <button type="button" onclick="copyText()"><ion-icon id="copies" name="copy-outline"></ion-icon> <b id="Copied">Copy</b> </button>
+          <a href="Instructions.php">How it works?</a>
+        </div>
         <pre ondblclick="copyText()"><code   class="language-javascript" id="inputBox" ></code></pre>        
     </form>
     <script>

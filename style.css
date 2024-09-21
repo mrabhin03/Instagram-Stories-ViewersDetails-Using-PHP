@@ -192,3 +192,9 @@ a{
 td input{
     width:100%;
 }
+footer{
+    padding: 8px;
+    border-radius: 7px;
+    color: rgb(62, 62, 62);
+    /* background-color: rgba(41, 127, 185, 0.325); */
+}
