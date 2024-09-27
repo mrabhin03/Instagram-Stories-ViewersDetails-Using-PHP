@@ -75,6 +75,7 @@ thead th{
     align-items: center;
 }
 label, input,textarea,select {
+    cursor: pointer;
     display: block;
     margin: 10px 0;
     width: 100%;

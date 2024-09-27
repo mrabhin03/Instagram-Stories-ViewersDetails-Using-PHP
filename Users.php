@@ -18,6 +18,13 @@ include('session.php');
     <h1>Instagram Users</h1>
     <p id="Output"></p>
     <form id="ViewFormData">
+        <div>
+            <select id="TheFriendsType" onchange="CheckUser()">
+                <option value="0">All</option>
+                <option value="1">True Friends</option>
+                <option value="2">Fake Friends</option>
+            </select>
+        </div>
         <table>
             <thead>
                 <th>SI NO</th>
@@ -25,36 +32,8 @@ include('session.php');
                 <th>Viewed</th>
                 <th>Action</th>
             </thead>
-            <tbody>
-                <?php
-                $userssql="SELECT * FROM users ORDER BY Sort";
-                $usersda=$conn->query($userssql);
-                if($usersda->num_rows>0){
-                    $jur=1;
-                    while($userdata=$usersda->fetch_assoc()){
-                        $UserName=$userdata['UserName'];
-                        $Links = explode('(', $UserName);
-                        $Links= $Links[0];
-                        ?>
-                        <tr draggable="true" ondragstart="drag_start(event,0)" ondragover="drag_over(event,0)" ondragend="drag_drop(event,'<?php echo $userdata['UserID'];?>')">
-                        <td id="OrderNum"><?php echo $userdata['Sort']; ?></td>
-                        <?php
-                            $new=($userdata['Status']==0)?"   <b class='newuser'>(NEW)</b>":"";
-                            $count1=$conn->query("SELECT StoryID FROM viewers WHERE UserID='".$userdata['UserID']."'")->num_rows;
-                            $count2=$conn->query("SELECT StoryID FROM story")->num_rows;
-                            $stylecolor=($count1!=$count2)?"color:red;":"";
-                        ?>
-                        <td style='text-align:left;padding-right:25px;padding-left:10px;min-width:440px;'><a href='https://www.instagram.com/<?php echo $Links;?>' target='_blank'><?php echo $UserName.$new;?></a></td>
-                        <td <?php echo "style='$stylecolor'"?>><?php echo "($count1/$count2)";?></td>
-                        <td style='padding:5px 10px 5px 10px;'><a href="UserDetails.php?details=<?php echo $userdata['UserID'];?>" ><button type='button' class="View">View</button></a></td>
-                        </tr>
-                        <?php
-                        $jur++;
-                    }
-                }else{
-                    echo "<tr><td style='text-align:center;padding-right:25px;padding-left:10px;min-width:530px;' colspan='3'>NO Data</td></tr>";
-                }
-                ?>
+            <tbody id="TheUsersDetails">
+                
             </tbody>
         </table> 
     </form>
@@ -66,6 +45,24 @@ include('session.php');
             xhr.onload = function() {
                 if (xhr.status >= 200 && xhr.status < 300) {
                     document.getElementById('Output').innerHTML=xhr.responseText
+                } else {
+                    console.error('Error:', xhr.statusText);
+                }
+            };
+
+            xhr.onerror = function() {
+                console.error('Network Error');
+            };
+            xhr.send();
+        }
+
+        function GetDeatils(value){
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'UsersTable.php?Option='+value, true);
+            xhr.onload = function() {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    document.getElementById('TheUsersDetails').innerHTML=xhr.responseText;
+                    Ordervalues();
                 } else {
                     console.error('Error:', xhr.statusText);
                 }
@@ -120,7 +117,12 @@ include('session.php');
                 i++;
             })
         }
-        Ordervalues();
+        function CheckUser(){
+            TheValue=document.getElementById("TheFriendsType").value
+            GetDeatils(TheValue);
+        }
+        
+        setTimeout(CheckUser, 1);
     </script>
 </body>
 </html>
