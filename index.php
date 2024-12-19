@@ -1,3 +1,6 @@
+<?php
+include('CommonFiles/session.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
