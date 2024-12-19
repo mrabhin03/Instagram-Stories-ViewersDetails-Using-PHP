@@ -1,9 +1,11 @@
 <?php 
 //Connection to the database
-$server_name='localhost';
-$user='root';
-$password='';
-$database='instastories';
+
+if (file_exists('../../MainConnection.php')) {
+    include('../../MainConnection.php');
+} elseif (file_exists('../MainConnection.php')) {
+    include('../MainConnection.php');
+}
 
 $conn = new mysqli($server_name, $user, $password, $database);
 if ($conn->connect_error) {

@@ -1,7 +1,7 @@
 <?php
 //Saving the changes made in Stories details
-    include('Connections.php');
-    include('session.php');
+    include('../CommonFiles/Connections.php');
+    include('../CommonFiles/session.php');
     $Mode=$_GET['Mode'];
     if($Mode==0){
         $UserId=$_GET['UserID'];

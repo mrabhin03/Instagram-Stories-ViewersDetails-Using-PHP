@@ -1,6 +1,6 @@
 <?php
 //Updating the order of user to be displaied
-include('Connections.php');
+include('../CommonFiles/Connections.php');
 $UserId=$_GET['UserID'];
 $Start=$_GET['Start'];
 $End=$_GET['End'];

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Style/style.css?v=<?php echo time();?>">
     <title>Insta Viewers</title>
 </head>
     <body>

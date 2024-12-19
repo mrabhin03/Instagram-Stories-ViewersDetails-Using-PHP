@@ -1,6 +1,6 @@
 <?php
-include('Connections.php');
-include('session.php');
+include('../CommonFiles/Connections.php');
+include('../CommonFiles/session.php');
     $Value1= $_GET['Value1'];
     $Value2= $_GET['Value2'];
     $User1="SELECT UserID FROM `users` WHERE UserName='$Value1' LIMIT 1";

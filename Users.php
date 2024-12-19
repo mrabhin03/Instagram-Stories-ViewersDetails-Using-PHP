@@ -1,7 +1,7 @@
 <?php
 //Users details
-include('Connections.php');
-include('session.php');
+include('CommonFiles/Connections.php');
+include('CommonFiles/session.php');
 
 ?>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ include('session.php');
 <head>
     <meta charset="UTF-8">
     <title>Users Details</title>
-    <link rel="stylesheet" href="style.css?v=<?php echo time();?>">
+    <link rel="stylesheet" href="Style/style.css?v=<?php echo time();?>">
 </head>
 <body>
 <?php 
@@ -46,7 +46,7 @@ include('session.php');
         var Date='';
         function UpdateTable(UserID,Start,End){
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'OrderUpdate.php?UserID='+UserID+"&Start="+Start+"&End="+End, true);
+            xhr.open('GET', 'SubCodes/OrderUpdate.php?UserID='+UserID+"&Start="+Start+"&End="+End, true);
             xhr.onload = function() {
                 if (xhr.status >= 200 && xhr.status < 300) {
                     document.getElementById('Output').innerHTML=xhr.responseText
@@ -64,7 +64,7 @@ include('session.php');
         function GetDeatils(){
             value=TheValue
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'UsersTable.php?Option='+value+'&Date='+Date, true);
+            xhr.open('GET', 'SubCodes/UsersTable.php?Option='+value+'&Date='+Date, true);
             xhr.onload = function() {
                 if (xhr.status >= 200 && xhr.status < 300) {
                     document.getElementById('TheUsersDetails').innerHTML=xhr.responseText;

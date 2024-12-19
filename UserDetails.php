@@ -1,7 +1,7 @@
 <?php
 //Stories a user seen and not seen
-include('Connections.php');
-include('session.php');
+include('CommonFiles/Connections.php');
+include('CommonFiles/session.php');
 $UserID=$_GET['details'];
 $userssql="SELECT * FROM users WHERE UserID='$UserID'";
 $usersda=$conn->query($userssql)->fetch_assoc();
@@ -17,7 +17,7 @@ $conn->query($usersupdatesql);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Style/style.css?v=<?php echo time();?>">
     <title>Story Viewers</title>
 </head>
 <body>

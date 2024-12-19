@@ -1,7 +1,7 @@
 <?php
 //View and edit created stories 
-include('Connections.php');
-include('session.php');
+include('CommonFiles/Connections.php');
+include('CommonFiles/session.php');
 
 ?>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ include('session.php');
 <head>
     <meta charset="UTF-8">
     <title>Stories Details</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Style/style.css?v=<?php echo time();?>">
 </head>
 <body>
 <?php 
@@ -56,7 +56,7 @@ include('session.php');
 
         function StoryControl(UserID,Message,Date,Mode){
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'SaveStoryEdit.php?Mode='+Mode+'&UserID='+UserID+'&Message='+Message+"&Date="+Date, true);
+            xhr.open('GET', 'SubCodes/SaveStoryEdit.php?Mode='+Mode+'&UserID='+UserID+'&Message='+Message+"&Date="+Date, true);
             xhr.onload = function() {
                 if (xhr.status >= 200 && xhr.status < 300) {
                     document.getElementById('Output').innerHTML=xhr.responseText

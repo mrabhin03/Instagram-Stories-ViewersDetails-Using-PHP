@@ -1,7 +1,7 @@
 <?php
 //User data Table
-include('Connections.php');
-include('session.php');
+include('../CommonFiles/Connections.php');
+include('../CommonFiles/session.php');
 $Search= $_GET['Value'];
 $Mode= $_GET['Mode'];
 $userssql="SELECT * FROM users WHERE UserName LIKE '%$Search%' ORDER BY Sort";

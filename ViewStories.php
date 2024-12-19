@@ -1,14 +1,14 @@
 <?php
 //Updating the view list of a story
-include('Connections.php');
-include('session.php');
+include('CommonFiles/Connections.php');
+include('CommonFiles/session.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>View Stories</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Style/style.css?v=<?php echo time();?>">
 </head>
 <body>
     <h1>View Data</h1>

@@ -1,7 +1,7 @@
 <?php
 //Details of user who seen and not seen your story
-include('Connections.php');
-include('session.php');
+include('CommonFiles/Connections.php');
+include('CommonFiles/session.php');
 $storyID=$_SESSION['StoryID'];
 $sqlstory="SELECT * FROM story WHERE StoryID=$storyID";
 $stqu=$conn->query($sqlstory)->fetch_assoc();
@@ -12,7 +12,7 @@ $stqu=$conn->query($sqlstory)->fetch_assoc();
 <head>
     <meta charset="UTF-8">
     <title>Story Viewers</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Style/style.css?v=<?php echo time();?>">
 </head>
 <body>
 <?php 
@@ -43,7 +43,7 @@ $stqu=$conn->query($sqlstory)->fetch_assoc();
     <script>
         function gettable(Mode,input_value){
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'Tables.php?Mode='+Mode+"&Value="+input_value, true);
+            xhr.open('GET', 'SubCodes/Tables.php?Mode='+Mode+"&Value="+input_value, true);
             xhr.onload = function() {
                 if (xhr.status >= 200 && xhr.status < 300) {
                     document.getElementById('TheTableBody').innerHTML=xhr.responseText

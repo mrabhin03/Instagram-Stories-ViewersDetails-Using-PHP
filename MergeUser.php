@@ -1,15 +1,14 @@
 <?php
 //Details of user who seen and not seen your story
-include('Connections.php');
-include('session.php');
+include('CommonFiles/Connections.php');
+include('CommonFiles/session.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merge</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Style/style.css?v=<?php echo time();?>">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
@@ -51,7 +50,7 @@ include('session.php');
     <script>
         function gettable(input_value,Mode){
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'MergeUserData.php?Value='+input_value+'&Mode='+Mode, true);
+            xhr.open('GET', 'SubCodes/MergeUserData.php?Value='+input_value+'&Mode='+Mode, true);
             xhr.onload = function() {
                 if (xhr.status >= 200 && xhr.status < 300) {
                     if(Mode==1){
@@ -102,7 +101,7 @@ include('session.php');
                 return
             }
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'MergeUserCode.php?Value1='+Value1+'&Value2='+Value2, true);
+            xhr.open('GET', 'SubCodes/MergeUserCode.php?Value1='+Value1+'&Value2='+Value2, true);
             xhr.onload = function() {
                 if (xhr.status >= 200 && xhr.status < 300) {
                     document.getElementById('scriptData').innerHTML=xhr.responseText

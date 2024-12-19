@@ -1,6 +1,6 @@
 <?php
-include('Connections.php');
-include('session.php');
+include('CommonFiles/Connections.php');
+include('CommonFiles/session.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
