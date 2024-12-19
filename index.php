@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Insta Viewers</title>
 </head>
@@ -15,6 +14,7 @@
             <a href="Users.php"><button class='button1'>User Management</button></a>
             <a href="Code.php"><button class='button1'>Details Code</button></a>
             <a href="Instructions.php"><button class='button1'>Instructions</button></a>
+            <a href="MergeUser.php"><button class="button1" type='button' >Merge Users</button></a>
         </div>
         <footer>Don't Forget to import Database</footer>
     </body>

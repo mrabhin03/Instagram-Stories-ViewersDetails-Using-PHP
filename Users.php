@@ -8,9 +8,8 @@ include('session.php');
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users Details</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=<?php echo time();?>">
 </head>
 <body>
 <?php 
@@ -19,6 +18,11 @@ include('session.php');
     <p id="Output"></p>
     <form id="ViewFormData">
         <div>
+            <div style='display:flex;gap:20px;align-items:center;'>
+                <button class='View' type='button' onclick='dateChange(this,0)'>All Time</button>
+                or
+                <input type="month" onchange='dateChange(this,1)' id=""  style='width:200px;height:100%;margin:0;'>
+            </div>
             <select id="TheFriendsType" onchange="CheckUser()">
                 <option value="0">All</option>
                 <option value="1">True Friends</option>
@@ -38,7 +42,8 @@ include('session.php');
         </table> 
     </form>
     <script>
-
+        var TheValue;
+        var Date='';
         function UpdateTable(UserID,Start,End){
             var xhr = new XMLHttpRequest();
             xhr.open('GET', 'OrderUpdate.php?UserID='+UserID+"&Start="+Start+"&End="+End, true);
@@ -56,9 +61,10 @@ include('session.php');
             xhr.send();
         }
 
-        function GetDeatils(value){
+        function GetDeatils(){
+            value=TheValue
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'UsersTable.php?Option='+value, true);
+            xhr.open('GET', 'UsersTable.php?Option='+value+'&Date='+Date, true);
             xhr.onload = function() {
                 if (xhr.status >= 200 && xhr.status < 300) {
                     document.getElementById('TheUsersDetails').innerHTML=xhr.responseText;
@@ -72,6 +78,15 @@ include('session.php');
                 console.error('Network Error');
             };
             xhr.send();
+        }
+
+        function dateChange(object,Mode){
+            if(Mode==0){
+                Date='';
+            }else{
+                Date=object.value;
+            }
+            GetDeatils();
         }
         
 
@@ -119,7 +134,7 @@ include('session.php');
         }
         function CheckUser(){
             TheValue=document.getElementById("TheFriendsType").value
-            GetDeatils(TheValue);
+            GetDeatils();
         }
         
         setTimeout(CheckUser, 1);

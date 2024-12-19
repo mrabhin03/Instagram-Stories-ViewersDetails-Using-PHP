@@ -83,7 +83,7 @@ label, input,textarea,select {
 textarea{
     resize:vertical;
 }
-input[type="text"], input[type="number"],input[type="date"],textarea,select {
+input[type="text"], input[type="number"],input[type="date"],input[type="month"],textarea,select {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;

@@ -17,7 +17,6 @@ $conn->query($usersupdatesql);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Story Viewers</title>
 </head>
@@ -36,7 +35,7 @@ $conn->query($usersupdatesql);
             </thead>
             <tbody>
                 <?php
-                $Storysql="SELECT * FROM `story` ORDER BY Date DESC";
+                $Storysql="SELECT * FROM `story` ORDER BY StoryID DESC";
                 $Stories=$conn->query($Storysql);
                 if($Stories->num_rows>0){
                     $viewsd=0;
@@ -73,69 +72,5 @@ $conn->query($usersupdatesql);
             </tbody>
         </table> 
     </form>
-    <script>
-
-        function UpdateTable(UserID,Start,End){
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'OrderUpdate.php?UserID='+UserID+"&Start="+Start+"&End="+End, true);
-            xhr.onload = function() {
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    document.getElementById('Output').innerHTML=xhr.responseText
-                } else {
-                    console.error('Error:', xhr.statusText);
-                }
-            };
-
-            xhr.onerror = function() {
-                console.error('Network Error');
-            };
-            xhr.send();
-        }
-        
-
-
-        function drag_start(event,object_s) {
-            if(object_s==0){
-                row = event.target.closest('tr');
-            }else{
-                row = event.target
-            }
-            startIndex = Array.from(row.parentNode.children).indexOf(row)+1;
-        }
-
-        function drag_over(event,object_s) {
-            event.preventDefault();
-            event.dataTransfer.dropEffect = 'move';
-            if(object_s==0){
-                var target = event.target.closest('tr');
-            }else{
-                var target = event.target
-            }
-            if (target && target !== row) {
-                var children = Array.from(target.parentNode.children);
-                if (children.indexOf(target) > children.indexOf(row)) {
-                    target.after(row);
-                } else {
-                    target.before(row);
-                }
-            }
-        }
-        function drag_drop(event,UserID){
-            event.preventDefault();
-            var endIndex = Array.from(row.parentNode.children).indexOf(row)+1;
-            UpdateTable(UserID,startIndex,endIndex)
-            setTimeout(Ordervalues, 700);
-            // console.log(UserID+"   Start: "+startIndex+"  END: "+endIndex)
-        }
-        function Ordervalues(){
-            tableSI=document.querySelectorAll("#OrderNum");
-            i=1;
-            tableSI.forEach((element)=>{
-                element.innerHTML=i;
-                i++;
-            })
-        }
-        Ordervalues();
-    </script>
 </body>
 </html>
