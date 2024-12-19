@@ -16,7 +16,7 @@
             <a href="Instructions.php"><button class='button1'>Instructions</button></a>
             <a href="MergeUser.php"><button class="button1" type='button' >Merge Users</button></a>
         </div>
-        <footer>Don't Forget to import Database</footer>
+        <!-- <footer>Don't Forget to import Database</footer> -->
     </body>
 </html>
 
