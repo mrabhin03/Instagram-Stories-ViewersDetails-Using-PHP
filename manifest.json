@@ -4,8 +4,8 @@
     "description": "This help us to gather users who watched our instagram stories and who wasn't. This codes are only for educational purposes.",
     "start_url": "index.php",
     "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#000000",
+    "background_color": "#0b0019",
+    "theme_color": "#0b0019",
     "icons": [
       {
         "src": "Logo 192x192.png",
