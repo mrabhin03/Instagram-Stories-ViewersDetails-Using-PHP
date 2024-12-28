@@ -21,7 +21,7 @@ include('CommonFiles/session.php');
             <div style='display:flex;gap:20px;align-items:center;'>
                 <button class='View' type='button' onclick='dateChange(this,0)'>All Time</button>
                 or
-                <input type="month" onchange='dateChange(this,1)' id=""  style='width:200px;height:100%;margin:0;'>
+                <input type="month" onchange='dateChange(this,1)' id="Monthdata"  style='width:200px;height:100%;margin:0;'>
             </div>
             <select id="TheFriendsType" onchange="CheckUser()">
                 <option value="0">All</option>
@@ -83,6 +83,7 @@ include('CommonFiles/session.php');
         function dateChange(object,Mode){
             if(Mode==0){
                 Date='';
+                document.getElementById("Monthdata").value='';
             }else{
                 Date=object.value;
             }
