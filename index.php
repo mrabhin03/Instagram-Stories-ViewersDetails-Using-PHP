@@ -10,7 +10,7 @@ include('CommonFiles/session.php');
     <meta property="og:image" content="favicon.ico">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any">
-    <link rel="icon" type="image/png" href="Logo 192x192.png">
+    <link rel="icon" type="image/png" href="Logo192x192.png">
 </head>
     <body>
         <h1>Instagram Story Management</h1>
