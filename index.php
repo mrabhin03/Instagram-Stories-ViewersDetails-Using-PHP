@@ -7,6 +7,10 @@ include('CommonFiles/session.php');
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Style/style.css?v=<?php echo time();?>">
     <title>Insta Viewers</title>
+    <meta property="og:image" content="favicon.ico">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any">
+    <link rel="icon" type="image/png" href="Logo 192x192.png">
 </head>
     <body>
         <h1>Instagram Story Management</h1>
