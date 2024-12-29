@@ -15,7 +15,8 @@ if(isset($_POST['username'])){
     if($result->num_rows>0){
         $UserData=$result->fetch_assoc();
         if (password_verify($password, $UserData['Password'])) {
-            $_SESSION['UserName']=$username;
+            setcookie("UserID",$UserData['ID'],time()+(86400*30),"/");
+            $_SESSION['UserID']=$UserData['ID'];
             header("location: ../");
         } else {
             $test1=explode("'", $password1);
