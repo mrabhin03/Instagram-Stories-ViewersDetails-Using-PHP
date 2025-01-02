@@ -50,7 +50,7 @@ include('CommonFiles/session.php');
             padding: 0px;
             margin: 0px;
             /* border: 3px solid #777; */
-            height:420px;
+            height:60vh;
             transition: border-color 0.3s ease;
             display: block;
             margin: 10px 0;

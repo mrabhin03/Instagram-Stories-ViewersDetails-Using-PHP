@@ -83,13 +83,15 @@ include('CommonFiles/session.php');
         
         #header-details{
             color:#ddd;
-          width:100%; 
-          display:flex; 
-          align-items:center; 
-          justify-content:space-between;
-          padding:10px;
-          background-color:#383838;
-          border-radius:6px;
+            width:100%; 
+            display:flex; 
+            align-items:start; 
+            flex-direction:column;
+            justify-content:space-between;
+            padding:10px;
+            background-color:#383838;
+            border-radius:6px;
+            gap:10px
         }
         #header-details>b{
             margin:10px 0 10px 26px;
@@ -99,6 +101,8 @@ include('CommonFiles/session.php');
         #header-details>summary{
             font-size:17px;
             cursor: pointer;
+            width: fit-content;
+            display:flex;
         }
         #header-details>img{
             height: 200px;
