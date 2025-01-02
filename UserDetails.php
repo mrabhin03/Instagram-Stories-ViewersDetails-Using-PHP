@@ -64,7 +64,7 @@ $conn->query($usersupdatesql);
                         <?php
                         $jur++;
                     }
-                    echo "<tr><td colspan='3'>Total Stories Viewed</td><td>($viewsd/".($jur-1).")</td></tr>";
+                    echo "<tr><td colspan='4'>Total Stories Viewed</td><td>($viewsd/".($jur-1).")</td></tr>";
                 }else{
                     echo "<tr><td style='text-align:center;padding-right:25px;padding-left:10px;min-width:530px;' colspan='3'>NO Data</td></tr>";
                 }
