@@ -2,7 +2,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
+    background-color:#1b1b1b;
     color: #333;
     margin: 0;
     padding: 20px;
@@ -10,6 +10,9 @@ body {
     flex-direction: column;
     align-items: center;
     user-select: none;
+}
+:root{
+    --ButtonBgColor:#0a5282;
 }
 ::-webkit-scrollbar{
     width: 0;
@@ -20,16 +23,17 @@ body {
     gap:10px;
 }
 h1 {
-    color: #2c3e50;
+    color: #5294d5;
 }
 .Home-nav {
-    background-color: #fff;
-    border-radius: 8px;
+    background-color: #232323;
+    border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(64, 64, 64, 0.1);
     max-width: 500px;
     width: 100%;
     margin-bottom: 20px;
+    border: 3px solid rgb(57, 57, 57);
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap:10px;
@@ -43,12 +47,11 @@ h1 {
     transition: border-color 0.3s ease;
 }
 .button1 {
-    border-color: #3498db;
     outline: none;
-    box-shadow: 1px 1px 4px #777;
+    box-shadow: 1px 1px 4px #060606;
 }
 .button1 {
-    background-color: #3498db;
+    background-color: var(--ButtonBgColor);
     color: white;
     border: none;
     border-radius: 4px;
@@ -63,7 +66,9 @@ thead th{
     height: 30px;
 }
 .form1 {
-    background-color: #fff;
+    background-color: #232323;
+    color: white;
+    border: 3px solid rgb(57, 57, 57);
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -87,6 +92,8 @@ input[type="text"], input[type="number"],input[type="date"],input[type="month"],
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: #212128;
+    color: white;
     transition: border-color 0.3s ease;
 }
 input[type="text"]:focus,input[type="date"]:focus, input[type="number"]:focus,textarea:focus,select:focus {
@@ -109,7 +116,8 @@ input[type="submit"]:hover {
 
 
 #ViewFormData {
-    background-color: #fff;
+    background-color: #232323;
+    color: white;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -151,7 +159,7 @@ tr{
     height: 40px;
 }
 tr:nth-child(odd){
-    background-color:#eeeeee;
+    background-color:#1f1f1f;
 }
 td .newuser{
     font-size:10px;
@@ -162,7 +170,7 @@ a{
     color:#464646;
 }
 #Searchresult{
-    background-color:#00b7ff1c;
+    background-color:#00b7ff58;
     border-radius:4px;
 }
 h6{
@@ -170,6 +178,7 @@ h6{
 }
 h3{
     text-align:center;
+    color: #3e6790;
 }
 
 a{
@@ -177,11 +186,11 @@ a{
     color:#464646;
 }
 .View {
-    border-color: #3498db;
+    border-color: var(--ButtonBgColor);
     outline: none;
 }
 .View {
-    background-color: #3498db;
+    background-color: var(--ButtonBgColor);
     color: white;
     border: none;
     border-radius: 4px;

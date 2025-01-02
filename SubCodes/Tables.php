@@ -34,7 +34,7 @@ if($usersda->num_rows>0){
         echo "<tr style='height:50px;'>";
         echo "<td>".$jur."</td>";
         $new=($userdata['Status']==0)?"   <b class='newuser'>(NEW)</b>":"";
-        echo "<td style='text-align:left;padding-right:25px;padding-left:10px;min-width:440px;'><a href='https://www.instagram.com/$Links' target='_blank'>".$UserName.$new."</a></td>";
+        echo "<td style='text-align:left;padding-right:25px;padding-left:10px;min-width:440px;'><a href='https://www.instagram.com/$Links' target='_blank' style='color:white'>".$UserName.$new."</a></td>";
         $check1="SELECT * FROM viewers WHERE UserID='".$userdata['UserID']."' AND StoryID='$storyID'";
         $chr=$conn->query($check1);
         $view="Not Seen";

@@ -22,7 +22,7 @@ if($usersda->num_rows>0){
         echo "<tr style='height:20px;'>";
         echo "<td>".$jur."</td>";
         $new=($userdata['Status']==0)?"   <b class='newuser'>(NEW)</b>":"";
-        echo "<td style='text-align:left;padding-right:25px;padding-left:10px;width:50px'><a href='https://www.instagram.com/$Links' target='_blank'>".$UserName.$new."</a></td>";
+        echo "<td style='text-align:left;padding-right:25px;padding-left:10px;width:50px'><a href='https://www.instagram.com/$Links' target='_blank' style='color:white'>".$UserName.$new."</a></td>";
         echo "<td style='padding:10px;min-width:70px;'><input type='radio' name='User' onclick='SelectUser(this,".$Mode.")' value='$MainUserName'></td>";
         echo "</tr>";
         $jur++;

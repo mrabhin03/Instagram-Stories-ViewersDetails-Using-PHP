@@ -53,7 +53,7 @@
                             }
                             $stylecolor=($count1!=$count2)?"color:red;":"";
                         ?>
-                        <td style='text-align:left;padding-right:25px;padding-left:10px;min-width:440px;'><a href='https://www.instagram.com/<?php echo $Links;?>' target='_blank'><?php echo $UserName.$new;?></a></td>
+                        <td style='text-align:left;padding-right:25px;padding-left:10px;min-width:440px;'><a href='https://www.instagram.com/<?php echo $Links;?>' target='_blank' style="color:white;"><?php echo $UserName.$new;?></a></td>
                         <td <?php echo "style='$stylecolor'"?>><?php echo "($count1/$count2)";?></td>
                         <td style='padding:5px 10px 5px 10px;'><a href="UserDetails.php?details=<?php echo $userdata['UserID'];?>" ><button type='button' class="View">View</button></a></td>
                         </tr>
