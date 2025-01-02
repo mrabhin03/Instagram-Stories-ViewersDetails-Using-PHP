@@ -46,7 +46,7 @@ include('CommonFiles/session.php');
                         $jur++;
                     }
                 }else{
-                    echo "<tr><td style='text-align:center;padding-right:25px;padding-left:10px;min-width:530px;' colspan='3'>NO Data</td></tr>";
+                    echo "<tr><td style='text-align:center;padding-right:25px;padding-left:10px;min-width:530px;' colspan='4'>NO Data</td></tr>";
                 }
                 ?>
             </tbody>
