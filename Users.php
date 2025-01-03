@@ -10,37 +10,40 @@ include('CommonFiles/session.php');
     <meta charset="UTF-8">
     <title>Users Details</title>
     <link rel="stylesheet" href="Style/style.css?v=<?php echo time();?>">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
 <?php 
     ?>
-    <h1>Instagram Users</h1>
-    <p id="Output"></p>
-    <form id="ViewFormData">
-        <div>
-            <div style='display:flex;gap:20px;align-items:center;'>
-                <button class='View' type='button' onclick='dateChange(this,0)'>All Time</button>
-                or
-                <input type="month" onchange='dateChange(this,1)' id="Monthdata"  style='width:200px;height:100%;margin:0;'>
+    <div>
+        <h1 id='headerData'><a href="index.php"><ion-icon name="arrow-back-outline"></ion-icon></a>Instagram Users<ion-icon style='opacity:0;' name="arrow-forward-outline"></ion-icon></h1>
+        <form id="ViewFormData">
+            <div>
+                <div style='display:flex;gap:20px;align-items:center;'>
+                    <button class='View' type='button' onclick='dateChange(0)'>All Time</button>
+                    or
+                    <input type="month"  id="Monthdata" value="<?=(isset($_GET['Date'])?$_GET['Date']:"")?>"  style='width:200px;height:100%;margin:0;'>
+                </div>
+                <select id="TheFriendsType" onchange="CheckUser()">
+                    <option value="0" <?=(isset($_GET['Option'])?($_GET['Option']=="0")?"SELECTED":"":"")?>>All</option>
+                    <option value="1" <?=(isset($_GET['Option'])?($_GET['Option']=="1")?"SELECTED":"":"")?>>True Friends</option>
+                    <option value="2" <?=(isset($_GET['Option'])?($_GET['Option']=="2")?"SELECTED":"":"")?>>Fake Friends</option>
+                </select>
             </div>
-            <select id="TheFriendsType" onchange="CheckUser()">
-                <option value="0">All</option>
-                <option value="1">True Friends</option>
-                <option value="2">Fake Friends</option>
-            </select>
-        </div>
-        <table>
-            <thead>
-                <th>SI NO</th>
-                <th>UserName</th>
-                <th>Viewed</th>
-                <th>Action</th>
-            </thead>
-            <tbody id="TheUsersDetails">
-                
-            </tbody>
-        </table> 
-    </form>
+            <table>
+                <thead>
+                    <th>SI NO</th>
+                    <th>UserName</th>
+                    <th>Viewed</th>
+                    <th>Action</th>
+                </thead>
+                <tbody id="TheUsersDetails">
+                    
+                </tbody>
+            </table> 
+        </form>
+    </div>
     <script>
         var TheValue;
         var Date='';
@@ -79,16 +82,21 @@ include('CommonFiles/session.php');
             };
             xhr.send();
         }
+        dropdown=document.getElementById("Monthdata")
+        dropdown.onchange = function () {
+            dateChange(1)
+        };
 
-        function dateChange(object,Mode){
+        function dateChange(Mode){
             if(Mode==0){
                 Date='';
-                document.getElementById("Monthdata").value='';
+                dropdown.value='';
             }else{
-                Date=object.value;
+                Date=dropdown.value;
             }
             GetDeatils();
         }
+        <?=(isset($_GET['Date'])?"dateChange(1);":"")?>
         
 
 

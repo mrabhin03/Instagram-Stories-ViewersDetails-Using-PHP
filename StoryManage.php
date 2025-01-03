@@ -10,48 +10,55 @@ include('CommonFiles/session.php');
     <meta charset="UTF-8">
     <title>Stories Details</title>
     <link rel="stylesheet" href="Style/style.css?v=<?php echo time();?>">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
 <?php 
     ?>
-    <h1>Instagram Stories</h1>
-    <p id="Output"></p>
-    <form id="ViewFormData">
-        <table>
-            <thead>
-                <th>SI NO</th>
-                <th>Story Name</th>
-                <th>Date</th>
-                <th>Action</th>
-            </thead>
-            <tbody>
-                <?php
-                $userssql="SELECT * FROM story ORDER BY StoryID DESC";
-                $usersda=$conn->query($userssql);
-                if($usersda->num_rows>0){
-                    $jur=1;
-                    while($userdata=$usersda->fetch_assoc()){
-                        $StoryName=$userdata['StoryName'];
-                        ?>
-                        <tr>
-                        <td><?php echo $jur; ?></td>
-                        <td style='text-align:left;padding-right:25px;padding-left:10px;min-width:440px;' id='Stor<?php echo $userdata['StoryID'];?>'><?php echo $StoryName;?></td>
-                        <td style='padding-right:25px;padding-left:10px;' id='StorDat<?php echo $userdata['StoryID'];?>'><?php echo $userdata['Date'];?></td>
-                        <td style='padding:5px 10px 5px 10px;'>
-                            <button type='button' class="View" onclick="StoryControl('<?php echo $userdata['StoryID'];?>',0,0,1)">View</button>
-                            <button type='button' class="View" onclick="editdetails('<?php echo $userdata['StoryID'];?>',this)">Edit</button>
-                        </td>
-                        </tr>
-                        <?php
-                        $jur++;
+    <div>
+        <h1 id='headerData'><a href="index.php">
+            <ion-icon name="arrow-back-outline"></ion-icon></a>
+            Instagram Stories
+            <ion-icon style='opacity:0;' name="arrow-forward-outline"></ion-icon>
+        </h1>
+        <form id="ViewFormData">
+            <table>
+                <thead>
+                    <th>SI NO</th>
+                    <th>Story Name</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    <?php
+                    $userssql="SELECT * FROM story ORDER BY StoryID DESC";
+                    $usersda=$conn->query($userssql);
+                    if($usersda->num_rows>0){
+                        $jur=1;
+                        while($userdata=$usersda->fetch_assoc()){
+                            $StoryName=$userdata['StoryName'];
+                            ?>
+                            <tr>
+                            <td><?php echo $jur; ?></td>
+                            <td style='text-align:left;padding-right:25px;padding-left:10px;min-width:440px;' id='Stor<?php echo $userdata['StoryID'];?>'><?php echo $StoryName;?></td>
+                            <td style='padding-right:25px;padding-left:10px;' id='StorDat<?php echo $userdata['StoryID'];?>'><?php echo $userdata['Date'];?></td>
+                            <td style='padding:5px 10px 5px 10px;'>
+                                <button type='button' class="View" onclick="StoryControl('<?php echo $userdata['StoryID'];?>',0,0,1)">View</button>
+                                <button type='button' class="View" onclick="editdetails('<?php echo $userdata['StoryID'];?>',this)">Edit</button>
+                            </td>
+                            </tr>
+                            <?php
+                            $jur++;
+                        }
+                    }else{
+                        echo "<tr><td style='text-align:center;padding-right:25px;padding-left:10px;min-width:530px;' colspan='4'>NO Data</td></tr>";
                     }
-                }else{
-                    echo "<tr><td style='text-align:center;padding-right:25px;padding-left:10px;min-width:530px;' colspan='4'>NO Data</td></tr>";
-                }
-                ?>
-            </tbody>
-        </table> 
-    </form>
+                    ?>
+                </tbody>
+            </table> 
+        </form>
+    </div>
     <script>
 
         function StoryControl(UserID,Message,Date,Mode){
@@ -59,9 +66,8 @@ include('CommonFiles/session.php');
             xhr.open('GET', 'SubCodes/SaveStoryEdit.php?Mode='+Mode+'&UserID='+UserID+'&Message='+Message+"&Date="+Date, true);
             xhr.onload = function() {
                 if (xhr.status >= 200 && xhr.status < 300) {
-                    document.getElementById('Output').innerHTML=xhr.responseText
                     if(Mode==1){
-                        window.location='viewwatchs.php';
+                        window.location='viewwatchs.php?10CQ8LgkVYyBVE2gdwUPrxA';
                     }
                 } else {
                     console.error('Error:', xhr.statusText);

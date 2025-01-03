@@ -17,6 +17,17 @@ body {
 ::-webkit-scrollbar{
     width: 0;
 }
+#headerData{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#headerData>a{
+    color: #5294d5;
+    display: grid;
+    place-content: center;
+}
 .StoryDetails{
     width: 100%;
     display:flex;
@@ -92,7 +103,7 @@ input[type="text"], input[type="number"],input[type="date"],input[type="month"],
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #212128;
+    background-color: #202021;
     color: white;
     transition: border-color 0.3s ease;
 }
@@ -152,18 +163,26 @@ input[type="submit"]:hover {
 table{
     width: 100%;
 }
-td{
+td,th{
     text-align:center;
+    padding: 10px;
+}
+th{
+    background-color:#1f1f1f;
 }
 tr{
     height: 40px;
 }
-tr:nth-child(odd){
+tr:nth-child(even){
     background-color:#1f1f1f;
 }
 td .newuser{
     font-size:10px;
-    color:red;
+    color:red !important;
+}
+.UserTitle .newuser{
+    font-size:20px;
+    color:red !important;
 }
 a{
     text-decoration:none;
@@ -178,7 +197,7 @@ h6{
 }
 h3{
     text-align:center;
-    color: #3e6790;
+    color: #2b71b8;
 }
 
 a{

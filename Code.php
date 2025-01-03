@@ -11,6 +11,8 @@ include('CommonFiles/session.php');
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <style>
         body {
@@ -90,11 +92,23 @@ include('CommonFiles/session.php');
         #header-details a{
           color:white;
         }
+        #headerData{
+          max-width: 750px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+      }
+      #headerData>a{
+          color: #5294d5;
+          display: grid;
+          place-content: center;
+      }
     </style>
 </head>
 <body>
     
-    <h1>Insta Code</h1>
+    <h1 id='headerData'><a href="index.php"><ion-icon name="arrow-back-outline"></ion-icon></a>Insta Code<ion-icon style='opacity:0;' name="arrow-forward-outline"></ion-icon></h1>
     <form  method="post">
         <div id="header-details">
           <button type="button" onclick="copyText()"><ion-icon id="copies" name="copy-outline"></ion-icon> <b id="Copied">Copy</b> </button>

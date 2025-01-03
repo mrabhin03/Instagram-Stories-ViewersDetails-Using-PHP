@@ -11,40 +11,43 @@ include('CommonFiles/session.php');
     <link rel="stylesheet" href="Style/style.css?v=<?php echo time();?>">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </head>
 <body>
 <div id='scriptData'></div>
-    <h1>Merge Users</h1>
-    <div style='display:flex;gap:20px'>
-        <form id="ViewFormData">
-        <div class="Newform">
-            <input onkeyup="InputValue1(this)" id='Input1' type="text" placeholder="UserName">
+    <div>
+        <h1 id='headerData'><a href="index.php"><ion-icon name="arrow-back-outline"></ion-icon></a>Merge Users <ion-icon style='opacity:0;' name="arrow-forward-outline"></ion-icon></h1>
+        <div style='display:flex;gap:20px'>
+            <form id="ViewFormData">
+            <div class="Newform">
+                <input onkeyup="InputValue1(this)" id='Input1' type="text" placeholder="UserName">
+            </div>
+                <table>
+                    <thead>
+                        <th>SI NO</th>
+                        <th>UserName</th>
+                        <th>Seens</th>
+                    </thead>
+                    <tbody id="TheTableBody1">
+                    </tbody>
+                </table>
+            </form>
+            <button onclick='MegreUser()' style='height:fit-content; display:flex;align-item:center;gap:5px;font-size:14px;margin-top:30px'class="View"><ion-icon name="arrow-back-outline"></ion-icon>Merge<ion-icon name="arrow-forward-outline"></ion-icon></button>
+            <form id="ViewFormData">
+            <div class="Newform">
+                <input onkeyup="InputValue2(this)" id='Input2' type="text" placeholder="UserName">
+            </div>
+                <table>
+                    <thead>
+                        <th>SI NO</th>
+                        <th>UserName</th>
+                        <th>Seens</th>
+                    </thead>
+                    <tbody id="TheTableBody2">
+                    </tbody>
+                </table>
+            </form>
         </div>
-            <table>
-                <thead>
-                    <th>SI NO</th>
-                    <th>UserName</th>
-                    <th>Seens</th>
-                </thead>
-                <tbody id="TheTableBody1">
-                </tbody>
-            </table>
-        </form>
-        <button onclick='MegreUser()' style='height:fit-content; display:flex;align-item:center;gap:5px;font-size:14px;margin-top:30px'class="View">Merge<ion-icon name="arrow-forward-outline"></ion-icon></button>
-        <form id="ViewFormData">
-        <div class="Newform">
-            <input onkeyup="InputValue2(this)" id='Input2' type="text" placeholder="UserName">
-        </div>
-            <table>
-                <thead>
-                    <th>SI NO</th>
-                    <th>UserName</th>
-                    <th>Seens</th>
-                </thead>
-                <tbody id="TheTableBody2">
-                </tbody>
-            </table>
-        </form>
     </div>
     
     <script>

@@ -3,6 +3,10 @@
                 include('../CommonFiles/session.php');
                 $op=$_GET['Option'];
                 $Date=explode("-",$_GET['Date']);
+                $dateTraf="";
+                if(count($Date)==2){
+                    $dateTraf="&Date=".$_GET['Date'];
+                }
                 if($op==0){
                     $userssql="SELECT * FROM users ORDER BY Sort";
                 }else if($op==1){
@@ -55,7 +59,7 @@
                         ?>
                         <td style='text-align:left;padding-right:25px;padding-left:10px;min-width:440px;'><a href='https://www.instagram.com/<?php echo $Links;?>' target='_blank' style="color:white;"><?php echo $UserName.$new;?></a></td>
                         <td <?php echo "style='$stylecolor'"?>><?php echo "($count1/$count2)";?></td>
-                        <td style='padding:5px 10px 5px 10px;'><a href="UserDetails.php?details=<?php echo $userdata['UserID'];?>" ><button type='button' class="View">View</button></a></td>
+                        <td style='padding:5px 10px 5px 10px;'><a href="UserDetails.php?details=<?php echo $userdata['UserID'];?>&Option=<?=$op.$dateTraf?>" ><button type='button' class="View">View</button></a></td>
                         </tr>
                         <?php
                         $jur++;

@@ -9,9 +9,11 @@ include('CommonFiles/session.php');
     <meta charset="UTF-8">
     <title>View Stories</title>
     <link rel="stylesheet" href="Style/style.css?v=<?php echo time();?>">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
-    <h1>View Data</h1>
+    <h1 id='headerData' style='max-width: 550px;'><a href="index.php"><ion-icon name="arrow-back-outline"></ion-icon></a>View Data<ion-icon style='opacity:0;' name="arrow-forward-outline"></ion-icon></h1>
     <form  method="post" class="form1">
         <label for="StoryName">Story Name</label>
         <select name="StoryName" id="">
