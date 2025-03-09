@@ -21,7 +21,7 @@ include('CommonFiles/session.php');
             <form id="ViewFormData">
             <div class="Newform">
                 <input onkeyup="InputValue1(this)" id='Input1' type="text" placeholder="UserName">
-                <input type="text" id="User1ID">
+                <input type="hidden" id="User1ID">
             </div>
                 <table>
                     <thead>
@@ -37,7 +37,7 @@ include('CommonFiles/session.php');
             <form id="ViewFormData">
             <div class="Newform">
                 <input onkeyup="InputValue2(this)" id='Input2' type="text" placeholder="UserName">
-                <input type="text" id="User2ID">
+                <input type="hidden" id="User2ID">
             </div>
                 <table>
                     <thead>
