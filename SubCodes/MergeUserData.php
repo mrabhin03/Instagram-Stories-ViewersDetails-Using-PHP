@@ -13,6 +13,7 @@ if($usersda->num_rows>0){
     $jur=1;
     while($userdata=$usersda->fetch_assoc()){
         $UserName=$userdata['UserName'];
+        $UserID=$userdata['UserID'];
         $MainUserName=$userdata['UserName'];
             // $UserName = str_replace($Search, "<b>$Search</b>", $UserName);
         if($Search!='')
@@ -23,7 +24,7 @@ if($usersda->num_rows>0){
         echo "<td>".$jur."</td>";
         $new=($userdata['Status']==0)?"   <b class='newuser'>(NEW)</b>":"";
         echo "<td style='text-align:left;padding-right:25px;padding-left:10px;width:50px'><a href='https://www.instagram.com/$Links' target='_blank' style='color:white'>".$UserName.$new."</a></td>";
-        echo "<td style='padding:10px;min-width:70px;'><input type='radio' name='User' onclick='SelectUser(this,".$Mode.")' value='$MainUserName'></td>";
+        echo "<td style='padding:10px;min-width:70px;'><input type='radio' name='User' onclick='SelectUser(this,".$Mode.",$UserID)' value='$MainUserName'></td>";
         echo "</tr>";
         $jur++;
     }

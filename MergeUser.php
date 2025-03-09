@@ -21,6 +21,7 @@ include('CommonFiles/session.php');
             <form id="ViewFormData">
             <div class="Newform">
                 <input onkeyup="InputValue1(this)" id='Input1' type="text" placeholder="UserName">
+                <input type="text" id="User1ID">
             </div>
                 <table>
                     <thead>
@@ -36,6 +37,7 @@ include('CommonFiles/session.php');
             <form id="ViewFormData">
             <div class="Newform">
                 <input onkeyup="InputValue2(this)" id='Input2' type="text" placeholder="UserName">
+                <input type="text" id="User2ID">
             </div>
                 <table>
                     <thead>
@@ -89,16 +91,18 @@ include('CommonFiles/session.php');
             }
             
         }
-        function SelectUser(object,Mode){
+        function SelectUser(object,Mode,IDv){
             if(Mode==1){
+                document.getElementById('User1ID').value=IDv
                 document.getElementById('Input1').value=object.value
             }else{
+                document.getElementById('User2ID').value=IDv
                 document.getElementById('Input2').value=object.value
             }
         }
         function MegreUser(){
-            Value1=document.getElementById('Input1').value;
-            Value2=document.getElementById('Input2').value;
+            Value1=document.getElementById('User1ID').value;
+            Value2=document.getElementById('User2ID').value;
             if(Value1==''||Value2==''){
                 alert('Select Users');
                 return
