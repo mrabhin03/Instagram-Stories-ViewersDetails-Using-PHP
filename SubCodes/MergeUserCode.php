@@ -16,7 +16,7 @@ include('../CommonFiles/session.php');
     $UserID1=$Data1->fetch_assoc()['UserID'];
     $UserID2=$Data2->fetch_assoc()['UserID'];
     
-    if($UserID1>$UserID2){
+    if($UserID1<$UserID2){
         $UserNameChange="UPDATE `users` SET `UserName`='$Value2' WHERE `UserName`='$Value1'";
         $StoryUpdate="UPDATE `viewers` SET `UserID`='$UserID2' WHERE `UserID`='$UserID1'";
         $DeleteUser="DELETE FROM `users` WHERE `UserID`='$UserID1'";
