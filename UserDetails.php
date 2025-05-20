@@ -48,7 +48,7 @@ $conn->query($usersupdatesql);
                             $check1="SELECT * FROM viewers WHERE UserID='".$UserID."' AND StoryID='".$Storiesdata['StoryID']."'";
                             $chr=$conn->query($check1);
                             $view="Not Seen";
-                            $colr="color:#bb2222;";
+                            $colr="color:#aa7777;";
                             if($chr->num_rows>0){
                                 $view="Seen";
                                 $colr="";
